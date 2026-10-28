@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101d35">
+<title>The Insight Journal</title>
+<meta name="description" content="Independent journalism, investigations and informed perspectives.">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7f5f0;color:#182238;font-family:Arial,sans-serif;line-height:1.7}
+header{background:#101d35;color:white;padding:22px 7%;border-bottom:3px solid #d9b66d}
+.brand{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:1px}
+.tagline{color:#d9b66d;font-size:13px}
+nav{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#d9b66d}
+.hero{background:#172b4b;color:white;padding:65px 7%}
+.eyebrow{color:#c6a35d;font-size:12px;font-weight:bold;letter-spacing:3px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25}
+h1{font-size:clamp(38px,7vw,65px);max-width:700px;margin:15px 0}
+.hero p{color:#d2d9e4;max-width:580px}
+.button{display:inline-block;background:#d9b66d;color:#101d35;padding:12px 18px;text-decoration:none;font-weight:bold;margin-top:12px}
+main{max-width:1100px;margin:auto;padding:45px 22px}
+section{margin-bottom:55px;scroll-margin-top:20px}
+.section-label{color:#977536;font-size:12px;font-weight:bold;letter-spacing:2px}
+h2{font-size:32px;margin:8px 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:white;border:1px solid #e3dfd5;padding:23px}
+.card h3{font-size:23px;margin:10px 0}
+.card a{color:#785c25;font-weight:bold}
+.card p{color:#596477}
+.number{color:#b18b42;font-size:13px;font-weight:bold}
+.about{background:#eae5db;padding:28px}
+footer{background:#0b1426;color:#cbd2df;padding:25px 7%;font-size:13px}
+footer a{color:#e2c57e}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">THE INSIGHT JOURNAL</div>
+  <div class="tagline">Look closer. Understand more.</div>
+  <nav>
+    <a href="#latest">Latest stories</a>
+    <a href="#investigations">Investigations</a>
+    <a href="#about">About TIJ</a>
+    <a href="#standards">Our standards</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">INDEPENDENT JOURNALISM</div>
+  <h1>Look beyond the headline.</h1>
+  <p>Stories, questions and investigations that help readers understand what is happening, and why it matters.</p>
+  <a class="button" href="#latest">Explore our stories →</a>
+</div>
+
+<main>
+  <section id="latest">
+    <div class="section-label">FROM THE DESK</div>
+    <h2>Latest stories</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="number">INVESTIGATION · TAXATION</div>
+        <h3>Where Does Tax Money Actually Go?</h3>
+        <p>An investigation into India's tax system, government spending and people's perceptions.</p>
+        <a href="#investigations">Explore the investigation ↓</a>
+      </article>
+      <article class="card">
+        <div class="number">TECHNOLOGY · ANALYSIS</div>
+        <h3>Is AI Helping Us or Making Us Too Dependent?</h3>
+        <p>Examining AI, education, privacy, misinformation and our dependence on technology.</p>
+        <a href="https://theinsightjournal3.substack.com/" target="_blank" rel="noopener noreferrer">Read on Substack ↗</a>
+      </article>
+    </div>
+    <p><small>Update these story cards as you publish new articles.</small></p>
+  </section>
+
+  <section id="investigations">
+    <div class="section-label">FOLLOW THE EVIDENCE</div>
+    <h2>Investigations</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="number">01 · RESEARCH</div>
+        <h3>Ask questions</h3>
+        <p>Identify an important question and investigate it rather than assuming the answer.</p>
+      </article>
+      <article class="card">
+        <div class="number">02 · VERIFICATION</div>
+        <h3>Check the facts</h3>
+        <p>Compare claims with original documents, reliable reporting and relevant interviews.</p>
+      </article>
+      <article class="card">
+        <div class="number">03 · TRANSPARENCY</div>
+        <h3>Show the sources</h3>
+        <p>Give readers the references they need to check important claims for themselves.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-label">ABOUT THE PUBLICATION</div>
+    <h2>A small publication. A serious purpose.</h2>
+    <p><strong>The Insight Journal (TIJ)</strong> is an independent journalism project focused on research, reporting, current affairs and thoughtful analysis.</p>
+    <p>Our aim is to make complicated topics easier to understand while being transparent about evidence, uncertainty and corrections.</p>
+  </section>
+
+  <section id="standards">
+    <div class="section-label">OUR COMMITMENT</div>
+    <h2>Editorial standards</h2>
+    <div class="cards">
+      <article class="card"><h3>Accuracy</h3><p>Verify important claims before publication.</p></article>
+      <article class="card"><h3>Source credit</h3><p>Link to original documents and credit reporting used.</p></article>
+      <article class="card"><h3>Fairness</h3><p>Separate verified facts, interview quotes and personal opinion.</p></article>
+      <article class="card"><h3>Corrections</h3><p>Correct errors transparently when they are discovered.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>THE INSIGHT JOURNAL</strong>
+  <p>Independent journalism. Informed perspectives.</p>
+  <p>© <span id="year"></span> The Insight Journal</p>
+  <p><a href="https://theinsightjournal3.substack.com/">Visit TIJ on Substack</a></p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

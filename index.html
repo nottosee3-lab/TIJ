@@ -20,12 +20,10 @@
       --red: #963d32;
       --line: #dcd5c9;
       --card: #eee8dc;
-      --white: #fffdf8;
       --max: 1120px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -37,9 +35,8 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
 
-    a:focus-visible, button:focus-visible {
+    a:focus-visible {
       outline: 2px solid var(--red);
       outline-offset: 4px;
     }
@@ -64,9 +61,7 @@
       padding: 10px 0;
     }
 
-    header {
-      border-bottom: 1px solid var(--line);
-    }
+    header { border-bottom: 1px solid var(--line); }
 
     .header-main {
       display: flex;
@@ -310,7 +305,8 @@
     }
 
     .arrow-link {
-      margin-top: 23px;
+      display: inline-block;
+      margin-top: 18px;
       color: var(--red);
       font-weight: 700;
       font-size: 13px;
@@ -327,6 +323,7 @@
     .story {
       border-top: 1px solid var(--line);
       padding-top: 15px;
+      min-width: 0;
     }
 
     .story-image {
@@ -342,6 +339,8 @@
       font-size: 25px;
       margin: 10px 0;
     }
+
+    .story h3 a:hover { color: var(--red); }
 
     .story p {
       font-size: 13px;
@@ -450,7 +449,7 @@
     }
 
     @media (max-width: 760px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
 
       .topline .wrap { font-size: 9px; }
 
@@ -470,7 +469,10 @@
 
       .hero h1 { font-size: clamp(43px, 12vw, 62px); }
 
-      .hero-art, .hero-art img { height: 270px; min-height: 270px; }
+      .hero-art, .hero-art img {
+        height: 270px;
+        min-height: 270px;
+      }
 
       section { padding: 43px 0; }
 
@@ -481,13 +483,19 @@
 
       .featured { grid-template-columns: 1fr; }
 
-      .featured-image, .featured-image img { min-height: 240px; height: 240px; }
+      .featured-image, .featured-image img {
+        min-height: 240px;
+        height: 240px;
+      }
 
-      .stories { grid-template-columns: 1fr; gap: 32px; }
+      .stories {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
 
       .story {
         display: grid;
-        grid-template-columns: 115px 1fr;
+        grid-template-columns: 115px minmax(0, 1fr);
         column-gap: 16px;
       }
 
@@ -508,7 +516,10 @@
 
       .question-band .button { justify-self: start; }
 
-      .standards { grid-template-columns: 1fr; gap: 18px; }
+      .standards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
 
       .footer-main { flex-direction: column; }
     }
@@ -530,7 +541,7 @@
 
   <header>
     <div class="wrap header-main">
-      <a href="#" aria-label="The Insight Journal home">
+      <a href="/" aria-label="The Insight Journal home">
         <div class="brand">THE INSIGHT <span>JOURNAL</span></div>
         <div class="tagline">Truth beyond the headline.</div>
       </a>
@@ -538,6 +549,7 @@
       <nav aria-label="Main navigation">
         <a href="#latest">Latest</a>
         <a href="#investigations">Investigations</a>
+        <a href="articles.html">All articles</a>
         <a href="#about">About</a>
         <a href="#standards">Our standards</a>
       </nav>
@@ -572,7 +584,9 @@
 
       <div class="ticker">
         <span class="ticker-label">The TIJ approach</span>
-        <span class="ticker-text">Ask the question · Examine the evidence · Understand the bigger picture</span>
+        <span class="ticker-text">
+          Ask the question · Examine the evidence · Understand the bigger picture
+        </span>
       </div>
 
       <section id="investigations">
@@ -596,17 +610,15 @@
           </div>
 
           <div class="featured-content">
-            <div class="category">Public money · Investigation</div>
+            <div class="category">Public money · Upcoming investigation</div>
             <h3>Where does your tax money actually go?</h3>
             <p class="description">
-              Follow public money from government revenue to budgets,
-              public services and the decisions that affect ordinary people.
+              An upcoming examination of public revenue, government budgets,
+              public services and decisions that affect ordinary people.
             </p>
-            <div class="meta">A TIJ investigation · Read the evidence</div>
-            <a class="arrow-link"
-               href="articles.html"
-               target="_blank" rel="noopener noreferrer">
-              Explore the investigation 
+            <div class="meta">In preparation · The Insight Journal</div>
+            <a class="arrow-link" href="articles.html">
+              Explore published stories →
             </a>
           </div>
         </article>
@@ -618,54 +630,70 @@
             <div class="eyebrow">Ideas worth examining</div>
             <h2>More from TIJ.</h2>
           </div>
-          <a class="text-link"
-             href="articles.html"
-             target="_blank" rel="noopener noreferrer">
-            All published stories 
+          <a class="text-link" href="articles.html">
+            All published stories →
           </a>
         </div>
 
         <div class="stories">
           <article class="story">
-            <img class="story-image"
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=80"
-              href="ai_dependence.html"
-              alt="Abstract artificial intelligence technology"
-              loading="lazy">
+            <a href="articles/ai-dependence.html" aria-label="Read the AI dependence article">
+              <img class="story-image"
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=80"
+                alt="Artificial intelligence technology"
+                loading="lazy">
+            </a>
             <div class="category">Technology & society</div>
-            <h3>Is AI Helpful or Making Us Too Dependent</h3>
+            <h3>
+              <a href="articles/ai-dependence.html">
+                Are We Becoming Too Dependent on AI?
+              </a>
+            </h3>
             <p>
               Convenience can be powerful. But what happens to our judgement
               when we let technology do more of our thinking?
             </p>
             <div class="meta">Analysis · Technology</div>
+            <a class="arrow-link" href="articles/ai-dependence.html">
+              Read article →
+            </a>
           </article>
 
           <article class="story">
-            <img class="story-image"
-              src="https://unsplash.com/photos/shallow-focus-photography-of-books-lUaaKCUANVI"
-              alt="Documents and notes on a work desk"
-              loading="lazy">
+            <a href="articles/cbse-insights.html" aria-label="Read the CBSE article">
+              <img class="story-image"
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80"
+                alt="Students learning in a classroom"
+                loading="lazy">
+            </a>
             <div class="category">Education & CBSE</div>
-            <h3>The CBSE's Insights</h3>
+            <h3>
+              <a href="articles/cbse-insights.html">
+                CBSE Insights: Understanding the 3R Rule
+              </a>
+            </h3>
             <p>
-              A policy is only the beginning. Its implementation, reach
-              and results matter just as much.
+              Explore the education issue, the policy behind it and
+              what it could mean for students.
             </p>
-            <div class="meta">Explainer · Public affairs</div>
+            <div class="meta">Education · Explainer</div>
+            <a class="arrow-link" href="articles/cbse-insights.html">
+              Read article →
+            </a>
           </article>
 
           <article class="story">
             <img class="story-image"
-              src="https://unsplash.com/photos/a-person-is-filling-in-a-tax-form-0HGjXoYiPkM"
-              alt="A bright, shared workspace"
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80"
+              alt="Financial documents and a calculator"
               loading="lazy">
-            <div class="category">Earning & Nation</div>
+            <div class="category">Public finance</div>
             <h3>Where Does Our Tax Money Actually Go?</h3>
             <p>
-              Work is in progress, expected by 20th November
+              An upcoming examination of public revenue, government
+              spending and the services that affect everyday life.
             </p>
-            <div class="meta">Perspective · Society</div>
+            <div class="meta">Coming soon</div>
           </article>
         </div>
       </section>
@@ -680,11 +708,7 @@
               own conclusions. Good journalism invites scrutiny.
             </p>
           </div>
-          <a class="button"
-             href="articles.html"
-             target="_blank" rel="noopener noreferrer">
-            Read more
-          </a>
+          <a class="button" href="articles.html">Read more</a>
         </div>
       </section>
 
@@ -751,7 +775,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div>
-          <a href="#" class="brand">THE INSIGHT <span>JOURNAL</span></a>
+          <a href="/" class="brand">THE INSIGHT <span>JOURNAL</span></a>
           <p class="footer-description">
             Independent journalism. Clear explanations.
             Questions that deserve better answers.
@@ -761,6 +785,7 @@
         <div class="footer-links">
           <a href="#about">About</a>
           <a href="#standards">Editorial standards</a>
+          <a href="articles.html">All articles</a>
           <a href="https://theinsightjournal3.substack.com/"
              target="_blank" rel="noopener noreferrer">Substack</a>
         </div>
@@ -773,11 +798,11 @@
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    const now = new Date();
     document.getElementById("today").textContent =
-      now.toLocaleDateString("en-IN", {
+      new Date().toLocaleDateString("en-IN", {
         day: "numeric",
         month: "short",
         year: "numeric"

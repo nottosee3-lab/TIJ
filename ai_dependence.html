@@ -1,113 +1,520 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An article from The Insight Journal examining dependence on artificial intelligence.">
-  <title>Is AI Helpful Or Making Us Too Dependent ? | The Insight Journal</title>
+
+  <title>Is AI Helpful or Making Us Too Dependent? | The Insight Journal</title>
+  <meta name="description" content="An examination of artificial intelligence, student learning, workplace skills, and the risks of becoming too dependent on AI.">
+
+  <meta name="theme-color" content="#f7f4ed">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --paper: #f7f4ed;
+      --white: #fffdf8;
+      --ink: #252722;
+      --muted: #6d6d64;
+      --accent: #a63e32;
+      --line: #ded8cb;
+      --soft: #eee8dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #f8f6f1;
-      color: #242424;
-      font-family: Georgia, "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.8;
     }
-    header {
-      padding: 22px 6%;
-      border-bottom: 1px solid #ded8ce;
-      font-family: Arial, sans-serif;
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
-    header a { color: inherit; text-decoration: none; }
-    .brand { font-size: 22px; font-weight: bold; }
-    .back { display: inline-block; margin-top: 12px; color: #a33a2b; }
-    main { max-width: 760px; margin: 55px auto; padding: 0 22px; }
+
+    a:hover {
+      color: var(--ink);
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      padding: 22px 6%;
+      background: var(--paper);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      color: var(--ink);
+      text-decoration: none;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.25rem, 4vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .header-link {
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-link:hover {
+      color: var(--accent);
+    }
+
+    .article-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 54px 24px 72px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
     .category {
-      color: #a33a2b;
-      font: bold 12px Arial, sans-serif;
-      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 11px;
+      border: 1px solid #d7b8ad;
+      border-radius: 3px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
     }
-    h1 { font-size: clamp(38px, 7vw, 62px); line-height: 1.08; }
-    .dek { font-size: 21px; color: #555; }
+
+    h1,
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 0 22px;
+      font-size: clamp(2.3rem, 7vw, 4.1rem);
+      letter-spacing: -0.035em;
+    }
+
+    .dek {
+      max-width: 700px;
+      margin: 0 0 25px;
+      color: #56574f;
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      line-height: 1.7;
+    }
+
     .byline {
-      font: 14px Arial, sans-serif;
-      color: #666;
-      border-bottom: 1px solid #ded8ce;
-      padding-bottom: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 18px 0 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
     }
-    article { font-size: 19px; }
-    article h2 { margin-top: 38px; font-size: 28px; }
-    footer {
-      padding: 28px 6%;
-      border-top: 1px solid #ded8ce;
-      font: 13px Arial, sans-serif;
-      color: #666;
+
+    .article-body {
+      padding-top: 25px;
+      font-size: 1.04rem;
     }
-    footer a { color: #a33a2b; }
+
+    .article-body p {
+      margin: 0 0 23px;
+    }
+
+    .article-body h2 {
+      margin: 44px 0 15px;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+    }
+
+    .article-body h3 {
+      margin: 28px 0 10px;
+      font-size: 1.15rem;
+      line-height: 1.45;
+    }
+
+    .article-body strong {
+      font-weight: 700;
+    }
+
+    .article-body blockquote {
+      margin: 30px 0;
+      padding: 10px 0 10px 22px;
+      border-left: 4px solid var(--accent);
+      color: #55564f;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.65;
+    }
+
+    .editorial-note {
+      margin: 30px 0;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: #55564f;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .editorial-note strong {
+      color: var(--ink);
+    }
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-label {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 11px 16px;
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .back-link:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .site-footer {
+      padding: 25px 6%;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .site-footer a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 18px 5%;
+      }
+
+      .article-wrap {
+        padding: 36px 20px 52px;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-body h2 {
+        margin-top: 36px;
+      }
+
+      .byline {
+        gap: 5px 12px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <a class="brand" href="/">THE INSIGHT JOURNAL</a><br>
-    <a class="back" href="index.html">← Back to homepage</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">The Insight <span>Journal</span></a>
+      <a class="header-link" href="/articles.html">All articles &rarr;</a>
+    </div>
   </header>
 
-  <main>
-    <div class="category">Technology & Society</div>
-    <h1>Is AI Helpful Or Making Us Too Dependent ?</h1>
-    <p class="dek">A closer look at how artificial intelligence is changing the way we think, learn and work.</p>
-    <p class="byline">By Dakshaya Chaudhary · 24 July 2026</p>
+  <main class="article-wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <a href="/articles.html">Articles</a> / Technology
+    </nav>
 
     <article>
-      <p><strong>
-The world of Artificial Intelligence also known as AI is vast. It is a contributor to reshaping our daily lives. These days AI has been growing like bamboo. A US Fed shows that the higher the investment in AI means the higher the growth of GDP. This means that the AI isn’t just anything it is a powerful asset to have within your mind. Recent studies often show that usage of AI is increasing day-by-day. People love to ask irrelevant questions the most like “What happens if I don’t brush for 3 days”. This is something most of us will find in our daily behaviour. </strong></p>
-<br>
-      <p><h3>Research Articles</h3>
-<br>
+      <header>
+        <span class="category">Technology &amp; Society</span>
+
+        <h1>Is AI Helpful or Making Us Too Dependent?</h1>
+
+        <p class="dek">
+          Artificial intelligence can explain difficult concepts, speed up everyday tasks,
+          and make information easier to access. But when does useful assistance become
+          dependence—and what happens to our ability to think independently?
+        </p>
+
+        <div class="byline">
+          <span>By Dakshaya Chaudhary</span>
+          <span>24 July 2026</span>
+          <span>Technology &amp; Education</span>
+        </div>
+      </header>
+
+      <div class="article-body">
+
+        <p>
+          Artificial intelligence has become a familiar part of everyday life. Students
+          use AI tools to understand lessons, people use them to organise ideas, and
+          businesses explore ways to complete tasks more efficiently. What once seemed
+          futuristic is now available through a phone or computer.
+        </p>
+
+        <p>
+          However, the growing convenience raises an important question: are we using
+          AI to improve our abilities, or are we gradually allowing it to do too much
+          of our thinking for us?
+        </p>
+
+        <h2>The convenience of artificial intelligence</h2>
+
+        <p>
+          One of AI's biggest advantages is accessibility. A student who struggles with
+          a difficult topic can ask for a simpler explanation, request examples, or
+          practise questions. Someone learning a new skill can receive feedback and
+          explore ideas without always needing immediate access to an expert.
+        </p>
+
+        <p>
+          AI can also help people organise information, check their work, brainstorm
+          possibilities, and save time on repetitive tasks. Used thoughtfully, it can
+          support learning rather than replace it.
+        </p>
+
+        <p>
+          Yet convenience can change behaviour. If a person immediately asks AI to
+          solve every difficult problem, they may miss the opportunity to struggle
+          productively, make mistakes, and develop their own reasoning.
+        </p>
+
+        <h2>Are students becoming too dependent?</h2>
+
+        <p>
+          Education is one of the clearest places to examine this concern. AI can
+          explain a mathematical method or help a student understand a scientific
+          concept. But there is a difference between learning how to solve a problem
+          and copying a solution that someone—or something—has already produced.
+        </p>
+
+        <p>
+          For example, a student who asks AI to explain each step of a maths problem
+          and then solves a similar problem independently is using the tool as a
+          learning aid. A student who copies the final answer without understanding
+          it may finish the assignment but gain little knowledge.
+        </p>
+
+        <p>
+          Claims about the percentage of students using AI for essays or homework
+          should be treated carefully. Results can differ according to the country,
+          age group, survey date, and wording of the questions. Without a verifiable
+          original study, a specific percentage should not be presented as a confirmed
+          fact.
+        </p>
+
+        <blockquote>
+          The important question is not simply whether students use AI, but whether
+          they can still explain and apply what they submit.
+        </blockquote>
+
+        <h2>What about jobs and human skills?</h2>
+
+        <p>
+          AI is also changing how people approach work. Some tasks that once required
+          substantial time can now be completed more quickly with automated tools.
+          This may improve productivity, but it can also create uncertainty about
+          which skills employers will value and how certain jobs may change.
+        </p>
+
+        <p>
+          It would be too simplistic to conclude that AI will eliminate every job or
+          that people will inevitably lose their abilities. The effects depend on the
+          occupation, the technology being used, how organisations adopt it, and
+          whether workers receive opportunities to develop new skills.
+        </p>
+
+        <p>
+          Economic research on AI investment and productivity should also be read
+          precisely. Investment in AI may contribute to economic growth, but that
+          relationship alone does not prove that AI investment automatically causes
+          higher GDP growth in every situation.
+        </p>
+
+        <h2>What people think about AI</h2>
+
+        <p>
+          Discussions about AI often reveal different priorities. Students may value
+          its ability to explain difficult topics and reduce the time needed for
+          assignments. Teachers may be concerned about whether submitted work reflects
+          a student's own understanding. People discussing AI online may describe
+          useful experiences, frustrating mistakes, or worries about future changes.
+        </p>
+
+        <p>
+          These perspectives can help identify questions worth investigating, but
+          individual experiences are not proof of what all students, teachers, or
+          workers believe. Interviews and online comments should be represented
+          accurately, with permission where appropriate, and distinguished from
+          findings based on larger studies.
+        </p>
+
+        <h2>The risks we should not ignore</h2>
+
+        <h3>1. We may stop checking our own reasoning</h3>
+
+        <p>
+          AI-generated answers can sound confident even when they contain mistakes.
+          Accepting an answer without checking it can allow errors to spread and
+          weaken a person's habit of questioning information.
+        </p>
+
+        <h3>2. Privacy matters</h3>
+
+        <p>
+          Users may enter personal details, school information, private messages, or
+          other sensitive material into AI tools without considering how that
+          information is handled. People should read the relevant privacy settings
+          and avoid sharing information they do not need to disclose.
+        </p>
+
+        <h3>3. Misinformation can look convincing</h3>
+
+        <p>
+          AI can produce inaccurate text and realistic-looking images, audio, or
+          other media. A polished presentation does not guarantee that something is
+          true. Checking the original source and comparing reliable reports remain
+          essential habits.
+        </p>
+
+        <h3>4. Independent skills need practice</h3>
+
+        <p>
+          Writing, problem-solving, research, and critical thinking improve through
+          practice. If AI consistently performs these tasks before a person attempts
+          them, that person may have fewer opportunities to build those abilities.
+          The risk is not inevitable, but it is worth taking seriously.
+        </p>
+
+        <h2>Using AI without surrendering our judgement</h2>
+
+        <p>
+          The answer does not have to be a complete rejection of AI. Instead, people
+          can use it in ways that keep their own thinking active.
+        </p>
+
+        <p>
+          Students can try a question independently before asking for help. They can
+          request hints rather than finished answers, verify important claims using
+          reliable sources, and explain the final answer in their own words. Teachers
+          and schools can also make expectations about AI use clearer.
+        </p>
+
+        <p>
+          In workplaces, AI-generated material should be checked by people who
+          understand the task. Decisions with significant consequences need appropriate
+          human judgement, accountability, and review.
+        </p>
+
+        <h2>Conclusion: a tool, not a replacement for thinking</h2>
+
+        <p>
+          Artificial intelligence offers real benefits. It can make information more
+          accessible, support learning, and help people complete certain tasks
+          efficiently. At the same time, careless dependence can encourage people to
+          accept answers without understanding them or verifying whether they are true.
+        </p>
+
+        <p>
+          The distinction lies in how the tool is used. AI can help us think through
+          a problem, but it should not become a reason to stop thinking about it.
+          Convenience is valuable when it strengthens our abilities—not when it
+          replaces the effort needed to develop them.
+        </p>
+
+        <aside class="editorial-note">
+          <strong>Editorial note:</strong> This article discusses general concerns
+          and possible benefits of AI. Specific statistics, economic findings, and
+          claims about AI's effects should be checked against original, reliable
+          sources before being treated as established evidence.
+        </aside>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="footer-label">Continue reading</div>
+        Explore more reporting and analysis from The Insight Journal.
+
         <br>
-A study shows that 83% of students use ChatGPT for writing essays and shortly afterward they are unable to recall, even in rare cases students are sitting blank during an exam. This same effect is noticeable with experts that in a workplace they often are unable to propose ideas or either they are relying too much on AI which could lead to “significant skill collapse”. Other concerns which arose are that people will get their jobs replaced. In the point of concerns there are many things like Job replacement, Better Intelligence than humans, Privacy risks, Deepfakes, Misinformation and more are some of the common concerns.
-<br>
-<h3>Human Perspective</h3>
-<br>
-        <br>
-Farhan, Grade 8: While interviewing his responses were straight forward. He said that he uses AI for technology and it make his day easier and is very helpful he uses the AI for almost all tasks and addresses the accessibility.
-<br>
-Vargavi, Grade 8: She address that “AI is useful when you use it wisely for homework and learning, and the vastness of the intelligence and speedy quick responses is what makes a difference between a human brain and a artificial brain.” She expressed concerns regarding the privacy and replacement of Jobs.
-<br>
-Teacher: “I use AI to simplify my work like making quizzes and all. In terms of dependency the rates are high as it could take over the human brain and make children too much dependable on AI even for simple tasks. It cannot replace the jobs of a teacher as it cannot bring that emotions to learning.” 
-<br>
-Reddit User: “Absolutely. When ChatGPT had an outage recently, I saw people literally posting on LinkedIn that they didn’t know what to do because they had outsourced their thinking to it. It’s just profoundly stupid. AI tools have their place and are a god-send when used appropriately, but any reliance on them is going to lead to significant problems with people who forget basic things like how to make decisions or complete an original thought.”
-<br>
-        <br>
-        <h3>Analysis</h3>
-        <br>
-A simple thing that can be retrieved from all the interviews is that people find AI not as a machine but more like a mentor for almost everything. People are often afraid of AI raiding their jobs but it is quite understandable that AI is still learning from the millions of data it has been feeded. In terms of dependency, humans are always lazy to do work on their on own they always want somebody for doing their tasks which is exactly same in the case of AI usage. Parents are afraid of their children using calculator but not using AI. AI is everywhere even from our morning routines to our night routines either it is about whipping a cream or just relaxing for 10 minutes.
 
-
-Studies show this more deeply people want to make their life easier and efficient. AI has helped many people in improving but also has made cognitive skills get weaker over time. AI’s dependency is something that is indeed a trap for human brain. Skills like analytical skills, problem solving and many more capabilities of our brain are the main prey of the AI dependency. One thing that is indeed a point to acknowledge is basically the accessibility of AI it just takes some clicks to open the AI and ask a question.
-
-<br>
-        <br>
-<h3>Conclusion</h3>
-<br>
-AI has undoubtedly become a powerful part of modern life. From simplifying everyday tasks to helping students learn and professionals work more efficiently, its usefulness is difficult to ignore. However, the interviews and research also raise an important concern: convenience can gradually become dependence. The problem may not be AI itself, but how we choose to use it. When AI supports human thinking, it can be an incredibly useful tool. When it begins replacing our ability to think, create, decide, or solve problems independently, its usefulness can become a weakness. Perhaps the real question is not whether AI is helping us or making us dependent, but whether we are still the ones controlling the tool.
-
- 
-
-
-
-
-</p>
+        <a class="back-link" href="/articles.html">
+          &larr; More from The Insight Journal
+        </a>
+      </footer>
     </article>
 
-    <p><a class="back" href=""> More from The Insight Journal</a></p>
   </main>
 
-  <footer>
-    © The Insight Journal · Independent student journalism
+  <footer class="site-footer">
+    <p>
+      &copy; 2026 The Insight Journal. Independent journalism and analysis.
+    </p>
+    <p><a href="/">Return to homepage</a></p>
   </footer>
+
 </body>
 </html>
